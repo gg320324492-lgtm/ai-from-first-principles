@@ -55,7 +55,3 @@ Thumbs.db
 
 # 论文 PDF 原文不入库（只留笔记）
 papers/*.pdf
-
-# CI 工作流暂不入库：当前 gh OAuth token 缺少 workflow scope，推送会被拒。
-# 执行 `gh auth refresh -h github.com -s workflow` 刷新授权后，删除下面这行即可恢复。
-.github/workflows/
