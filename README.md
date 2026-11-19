@@ -17,6 +17,8 @@
 
 ## 目录结构
 
+仓库按用途分为五个区，数字前缀对应学习流程（学 → 练 → 验 → 读），`90` 为支撑维护区：
+
 ```
 ai-from-first-principles/
 │
@@ -24,31 +26,42 @@ ai-from-first-principles/
 ├── ROADMAP.md                # 24 周学习路线
 ├── LEARNING_RULES.md         # 学习与 Agent 使用规范
 │
-├── theory/                   # 数学推导与原理笔记
-│   ├── neural-networks/      # 阶段Ⅰ：梯度、反向传播、优化器
-│   ├── transformers/         # 阶段Ⅱ：Tokenizer、Attention、GPT
-│   ├── llm-training/         # 阶段Ⅲ：预训练、SFT、LoRA、DPO、RLHF
-│   ├── llm-inference/        # 阶段Ⅳ：KV Cache、量化、采样
-│   └── agent-systems/        # 阶段Ⅴ-Ⅵ：Agent Loop、工具、RAG、多 Agent
+├── 01-learning/              # ① 学习记录区（过程性记录，只写不改历史）
+│   ├── notes/                #   概念笔记（按主题：01-neural-networks … 05-agent-systems）
+│   ├── derivations/          #   数学推导：自己动手推的公式
+│   ├── mistakes/             #   错题本：错在哪、为什么、怎么防再错
+│   ├── review/               #   复习记录：重做错题与重推公式
+│   ├── assessments/          #   考核记录：理论/代码/实验分析题与评分
+│   ├── reports/              #   阶段总结报告
+│   └── weekly/               #   周报 week-XX.md
 │
-├── projects/                 # 动手实现
-│   ├── 01-micrograd/         # 手写自动微分引擎
-│   ├── 02-tinygpt/           # 从零实现 GPT
-│   ├── 03-finetuning/        # 微调与对齐实验
-│   ├── 04-mini-agent/        # Agent 内核
-│   └── 05-research-agent/    # 高级 Research Agent
+├── 02-practice/              # ② 动手实现区（所有要跑起来的代码）
+│   ├── 01-micrograd/         #   手写自动微分引擎（阶段Ⅰ）
+│   ├── 02-tinygpt/           #   从零实现 GPT（阶段Ⅱ）
+│   ├── 03-finetuning/        #   SFT / LoRA / DPO 实验（阶段Ⅲ）
+│   ├── 04-mini-agent/        #   Agent 内核（阶段Ⅴ）
+│   ├── 05-research-agent/    #   RAG / Memory / 多 Agent（阶段Ⅵ）
+│   └── 06-benchmark-suite/   #   评估套件（阶段Ⅶ）
 │
-├── experiments/              # 实验配置与结果
-├── benchmarks/               # 评估任务与指标
-├── tests/                    # 自动化测试
-├── papers/                   # 文献笔记及合法引用
-├── weekly-reports/           # 每周学习记录
-├── prompts/                  # 学习 Agent 角色提示词
+├── 03-experiments/           # ③ 实验数据区（跑出来的结果，可复现档案）
+│   ├── templates/            #   实验报告模板
+│   ├── data/                 #   实验报告 + 原始数据（大文件不入库）
+│   └── plots/                #   图表
 │
-└── .github/
-    ├── workflows/            # 自动测试（CI）
-    └── ISSUE_TEMPLATE/       # 学习任务模板
+├── 04-papers/                # ④ 文献笔记区（只写笔记与引用，不上传 PDF）
+│
+├── 90-maintenance/           # ⑤ 项目维护区（维护项目本身的文档）
+│   ├── decisions/            #   决策日志（为什么这么定）
+│   ├── dev-notes/            #   维护笔记（CI、git、工具链排障）
+│   ├── env/                  #   环境快照（版本、依赖、硬件）
+│   └── templates/            #   项目级文档模板
+│
+├── prompts/                  # 学习 Agent 三角色提示词
+├── tests/                    # 跨项目公共测试
+└── .github/                  # CI 工作流与 Issue 模板
 ```
+
+各分区职责一句话：**学习看 `01`，写代码去 `02`，跑结果存 `03`，读论文记 `04`，改项目规范进 `90`。**
 
 ## 每周学习流程（六步循环）
 
@@ -59,7 +72,7 @@ ai-from-first-principles/
 5. **理解考核** — 理论题 + 代码题 + 实验分析题
 6. **GitHub 归档** — 提交经过验证的代码、实验记录和总结
 
-每周在 `weekly-reports/` 提交一份 `week-XX.md`。
+每周在 `01-learning/weekly/` 提交一份 `week-XX.md`。
 
 ## 阶段验收标准
 
@@ -87,6 +100,7 @@ ai-from-first-principles/
 - Python ≥ 3.10
 - 依赖见 `requirements.txt`（保持最小化，优先使用标准库与 numpy）
 - 大模型权重、大型数据集、API 密钥一律不入库
+- 环境快照存于 `90-maintenance/env/`
 
 ## 协作方式
 
@@ -95,4 +109,4 @@ ai-from-first-principles/
 3. **阶段检查**：审查仓库内文件、提交和实验记录
 4. **验收完成**：确认阶段成果后进入下一阶段
 
-进度依据：`ROADMAP.md` + `weekly-reports/` + `experiments/`。
+进度依据：`ROADMAP.md` + `01-learning/weekly/` + `03-experiments/data/`。

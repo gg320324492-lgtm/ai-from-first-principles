@@ -1,7 +1,7 @@
 # ROADMAP — 24 周学习路线
 
 > 每周建议投入 8–10 小时。节奏可根据掌握情况调整，但不跳过核心原理。
-> 每周结束在 `weekly-reports/week-XX.md` 归档记录。
+> 每周结束在 `01-learning/weekly/week-XX.md` 归档记录。
 
 ## 总览
 
@@ -39,7 +39,7 @@
 - [ ] SGD、Momentum、Adam 推导与直觉
 - [ ] 学习率、batch size、初始化的影响
 - [ ] 实现：三种优化器 + 训练循环
-- [ ] **阶段交付物**：`projects/01-micrograd/`
+- [ ] **阶段交付物**：`02-practice/01-micrograd/`
 - 实验：不同学习率/优化器的损失曲线对照
 
 ---
@@ -70,7 +70,7 @@
 ### Week 7 — 训练 TinyGPT
 - [ ] 训练循环、梯度裁剪、学习率调度（cosine + warmup）
 - [ ] 文本生成：温度、top-k、top-p
-- [ ] **阶段交付物**：`projects/02-tinygpt/`
+- [ ] **阶段交付物**：`02-practice/02-tinygpt/`
 - 实验：在小语料上训练并生成文本，分析失败模式
 
 ---
@@ -96,7 +96,7 @@
 
 ### Week 11 — 阶段整合
 - [ ] 完整管线复盘：pretrain → SFT → alignment
-- [ ] **阶段交付物**：`projects/03-finetuning/` + 微调实验报告
+- [ ] **阶段交付物**：`02-practice/03-finetuning/` + 微调实验报告
 
 ---
 
@@ -117,7 +117,7 @@
 
 ### Week 14 — 推理加速
 - [ ] speculative decoding、batching、PagedAttention 概念
-- [ ] **阶段交付物**：推理性能基准报告（`benchmarks/`）
+- [ ] **阶段交付物**：推理性能基准报告（`03-experiments/data/`，套件放 `02-practice/06-benchmark-suite/`）
 
 ---
 
@@ -137,7 +137,7 @@
 
 ### Week 17 — 状态与可靠性
 - [ ] 上下文管理、错误处理、重试与回滚
-- [ ] **阶段交付物**：`projects/04-mini-agent/`
+- [ ] **阶段交付物**：`02-practice/04-mini-agent/`
 
 ---
 
@@ -160,7 +160,7 @@
 
 ### Week 21 — 多 Agent 与交付
 - [ ] 角色分工、消息传递、orchestrator 模式
-- [ ] **阶段交付物**：`projects/05-research-agent/`
+- [ ] **阶段交付物**：`02-practice/05-research-agent/`
 
 ---
 

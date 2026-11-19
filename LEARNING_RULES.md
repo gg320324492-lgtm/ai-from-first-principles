@@ -11,7 +11,7 @@
 
 ## Agent 角色分工
 
-学习过程中，Agent 通过 `prompts/` 中的提示词切换三种角色：
+学习过程中，Agent 通过 `prompts/` 中的提示词切换三种角色（目录职责见各分区 README）：
 
 | 角色 | 文件 | 职责 |
 |------|------|------|
@@ -23,7 +23,7 @@
 
 ## 代码规范
 
-- 代码必须能独立运行；每个 `projects/*` 子目录提供 `README.md` 说明运行方式。
+- 代码放在 `02-practice/`，必须能独立运行；每个项目子目录提供 `README.md` 说明运行方式。
 - 优先从零实现（numpy / 标准库），再学习成熟框架。
 - 核心实现必须有对应单元测试（`tests/` 或项目内 `test_*.py`）。
 - 数值实现必须与参考实现或数值方法（如有限差分梯度）对照验证。
@@ -31,7 +31,7 @@
 
 ## 实验规范
 
-每个实验在 `experiments/` 留档，包含：
+每个实验在 `03-experiments/data/` 按日期建目录留档，包含：
 
 1. **假设**：想验证什么，预期结果是什么
 2. **配置**：超参数、数据、随机种子、依赖版本
@@ -39,14 +39,23 @@
 4. **结果**：原始数据 + 图表，不删掉"不好看"的结果
 5. **结论**：结果是否支持假设，解释与局限
 
-模板见 `experiments/TEMPLATE-experiment.md`。
+模板见 `03-experiments/templates/TEMPLATE-experiment.md`。
+
+## 学习记录规范
+
+- **笔记**（`01-learning/notes/`）：用自己的话，每篇附 2–3 个自测问题。
+- **推导**（`01-learning/derivations/`）：完整过程 + 卡壳点，不许只写结论。
+- **错题**（`01-learning/mistakes/`）：错在哪、为什么错、正确做法、防再错检查点。
+- **复习**（`01-learning/review/`）：记录重做结果，出错的 3 天后、通过的 2 周后再复习。
+- **考核**（`01-learning/assessments/`）：验收考核独立完成，记录作答与评分。
 
 ## 归档规范
 
-- 每周提交 `weekly-reports/week-XX.md`（模板见 `weekly-reports/TEMPLATE-week.md`）。
+- 每周提交 `01-learning/weekly/week-XX.md`（模板见同目录 `TEMPLATE-week.md`）。
 - 阶段结束打 git tag（如 `stage-1-micrograd`），作为可追溯版本。
 - 大模型权重、大型数据集、API 密钥、个人信息一律不入库。
-- 论文笔记放在 `papers/`，只记录自己的理解与笔记，引用需规范；不上传论文 PDF 原文。
+- 论文笔记放在 `04-papers/`，只记录自己的理解与笔记，引用需规范；不上传论文 PDF 原文。
+- 项目规范变更记入 `90-maintenance/decisions/`，排障记入 `90-maintenance/dev-notes/`。
 
 ## 诚信规范
 
