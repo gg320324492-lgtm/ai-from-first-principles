@@ -1,0 +1,27 @@
+name: 每周学习任务
+description: 新一周的学习任务清单
+title: "Week XX：主题"
+labels: ["weekly"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        按 ROADMAP 中本周的任务填写。周五前归档周报。
+  - type: textarea
+    id: goals
+    attributes:
+      label: 本周目标
+      description: 理论、推导、代码、实验各列一条
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: 交付物
+      description: 代码、测试、实验、周报的具体文件路径
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: 上周遗留问题

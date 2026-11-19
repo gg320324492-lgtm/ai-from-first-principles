@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Testing / tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Model weights & datasets — 绝不入库
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.gguf
+*.onnx
+models/
+checkpoints/
+data/raw/
+data/processed/
+*.npz
+!tests/fixtures/*.npz
+
+# Experiments 大文件产物
+experiments/**/runs/
+wandb/
+mlruns/
+outputs/
+
+# Secrets
+.env
+.env.*
+*.key
+secrets*
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Notebooks
+.ipynb_checkpoints/
+
+# 论文 PDF 原文不入库（只留笔记）
+papers/*.pdf
